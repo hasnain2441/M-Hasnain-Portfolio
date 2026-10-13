@@ -5,13 +5,13 @@ const TECHS = ["Python","Django","DRF","PostgreSQL","Redis","Celery","Channels",
 
 const STATS = [
   { num: "1+", label: "Years of experience" },
-  { num: "5",  label: "Projects built" },
-  { num: "4",  label: "Live deployments" },
-  { num: "7",  label: "Tech areas covered" },
+  { num: "6+",  label: "Projects built" },
+  { num: "5",  label: "Live deployments" },
+  { num: "7+",  label: "Tech areas covered" },
 ];
 
 const CARDS = [
-  { icon: "⬡", title: "Multi-tenant architecture", body: "Store and hotel data kept fully isolated per tenant, served through tenant-scoped DRF APIs." },
+  { icon: "⬡", title: "Multi-tenant architecture", body: "Tenant-isolated data across ERPs, e-commerce and hospitality — enforced at the API layer with scoped DRF endpoints and zero cross-tenant leakage." },
   { icon: "✦", title: "Access control", body: "Custom MBAC and RBAC with module-level permissions across enterprise roles." },
   { icon: "◎", title: "Real-time systems", body: "Django Channels and Redis for timed quizzes, WebSocket monitoring and live notifications." },
   { icon: "◈", title: "Integrations and AI", body: "NPHIES claims over FHIR R4 and OAuth2, plus OpenAI quiz generation, all run through Celery." },

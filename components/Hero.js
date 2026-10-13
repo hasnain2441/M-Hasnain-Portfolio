@@ -3,11 +3,14 @@ import { profile } from "../lib/data";
 import { useState, useEffect } from "react";
 
 const LINES = [
-  "real-time systems",
+  "scalable Django backends",
   "secure REST APIs",
-  "multi-tenant ERPs",
-  "AI-powered features",
-  "billing platforms",
+  "multi-tenant ERP systems",
+  "AI-powered applications",
+  "healthcare billing platforms",
+  "database-driven solutions",
+  "intelligent RAG chatbots",
+  "workflow automation",
 ];
 
 function Typewriter() {
@@ -115,19 +118,18 @@ export default function Hero() {
             </div>
             <div className="mob-stat">
               <p style={{ margin: 0, fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8c95ab" }}>Projects</p>
-              <p style={{ margin: "4px 0 0", fontSize: "22px", fontWeight: 900, color: "#e8eaf0", lineHeight: 1 }}>5+ <span style={{ fontSize: "12px", fontWeight: 500, color: "#8c95ab" }}>Live</span></p>
+              <p style={{ margin: "4px 0 0", fontSize: "22px", fontWeight: 900, color: "#e8eaf0", lineHeight: 1 }}>6 <span style={{ fontSize: "12px", fontWeight: 500, color: "#8c95ab" }}>Built</span></p>
             </div>
           </div>
 
           {/* Role */}
-          <div className="fu3" style={{ marginTop: "20px", display: "flex", alignItems: "center", gap: "12px" }}>
-            <div style={{ height: "1px", width: "40px", background: "#8fb0ff" }} />
-            <p style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.25em", textTransform: "uppercase", color: "#8fb0ff", margin: 0 }}>Python / Django Developer · {profile.company}</p>
+          <div className="fu3" style={{ marginTop: "20px" }}>
+            <p style={{ fontSize: "12px", fontWeight: 900, letterSpacing: "0.25em", textTransform: "uppercase", color: "#8fb0ff", margin: 0 }}>Python / Django Developer</p>
           </div>
 
           {/* Description */}
           <p className="fu4" style={{ marginTop: "24px", maxWidth: "480px", fontSize: "16px", lineHeight: 1.8, color: "#8c95ab" }}>
-            Backend developer at {profile.company}. Multi-tenant ERPs, billing and e-learning platforms — with access control, real-time features and AI built in.
+            Backend developer building multi-tenant ERPs, billing and e-learning platforms — with access control, real-time features and AI built in.
           </p>
 
           {/* CTA Buttons */}
@@ -182,7 +184,7 @@ export default function Hero() {
 
           <div className="float-b" style={{ position: "absolute", right: "0px", bottom: "80px", borderRadius: "16px", border: "1px solid #222a3c", background: "#121622", padding: "16px 20px", boxShadow: "0 8px 32px rgba(0,0,0,0.4)", minWidth: "130px" }}>
             <p style={{ margin: 0, fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8c95ab" }}>Projects</p>
-            <p style={{ margin: "6px 0 0", fontSize: "26px", fontWeight: 900, color: "#e8eaf0", lineHeight: 1 }}>5+ <span style={{ fontSize: "13px", fontWeight: 500, color: "#8c95ab" }}>Live</span></p>
+            <p style={{ margin: "6px 0 0", fontSize: "26px", fontWeight: 900, color: "#e8eaf0", lineHeight: 1 }}>6 <span style={{ fontSize: "13px", fontWeight: 500, color: "#8c95ab" }}>Built</span></p>
           </div>
 
           <div className="float-c" style={{ position: "absolute", right: "0px", top: "60px", borderRadius: "12px", border: "1px solid rgba(143,176,255,0.2)", background: "rgba(143,176,255,0.08)", padding: "10px 16px", boxShadow: "0 4px 20px rgba(143,176,255,0.1)" }}>
