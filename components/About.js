@@ -36,7 +36,7 @@ export default function About() {
         <style>{`@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}`}</style>
       </div>
 
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "64px 40px 0" }}>
+      <div className="section-inner" style={{ paddingTop: "64px" }}>
 
         {/* Stats row */}
         <div className="reveal stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: "#222a3c", borderRadius: "16px", overflow: "hidden", marginBottom: "64px" }}>

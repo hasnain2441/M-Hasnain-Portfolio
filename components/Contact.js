@@ -3,7 +3,7 @@ import { profile } from "../lib/data";
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ borderTop: "1px solid #222a3c", background: "#0f1219", padding: "64px 40px", textAlign: "center" }}>
+    <section id="contact" style={{ borderTop: "1px solid #222a3c", background: "#0f1219", textAlign: "center" }} className="contact-section">
       <div style={{ maxWidth: "640px", margin: "0 auto" }} className="reveal">
         <p style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8fb0ff", margin: 0 }}>Have a project in mind?</p>
         <h2 style={{ marginTop: "12px", fontSize: "clamp(24px,3vw,36px)", fontWeight: 800, color: "#e8eaf0", fontFamily: "var(--font-display)" }}>Let&apos;s build something</h2>

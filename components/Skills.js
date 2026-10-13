@@ -13,7 +13,7 @@ export default function Skills() {
 
   return (
     <section id="skills" style={{ background: "#0b0d13", padding: "64px 0" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 40px" }}>
+      <div className="section-inner">
         <div className="reveal" style={{ marginBottom: "40px" }}>
           <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.25em", textTransform: "uppercase", color: "#8fb0ff", margin: 0 }}>What I bring</p>
           <h2 style={{ marginTop: "8px", fontSize: "clamp(24px,3vw,36px)", fontWeight: 800, color: "#e8eaf0", fontFamily: "var(--font-display)" }}>Core Skills</h2>

@@ -4,7 +4,7 @@ import { experience } from "../lib/data";
 export default function Experience() {
   return (
     <section id="experience" style={{ borderTop: "1px solid #222a3c", background: "#0f1219", padding: "64px 0" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 40px" }}>
+      <div className="section-inner">
         <div className="reveal" style={{ marginBottom: "40px", textAlign: "center" }}>
           <p style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8fb0ff", margin: 0 }}>Professional Journey</p>
           <h2 style={{ marginTop: "8px", fontSize: "clamp(24px,3vw,36px)", fontWeight: 800, color: "#e8eaf0", fontFamily: "var(--font-display)" }}>Experience</h2>

@@ -8,14 +8,14 @@ export default function Projects() {
 
   return (
     <section id="projects" style={{ background: "#0b0d13", padding: "64px 0" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 40px" }}>
+      <div className="section-inner">
 
         <div className="reveal" style={{ marginBottom: "48px" }}>
           <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.3em", textTransform: "uppercase", color: "#8fb0ff", margin: 0 }}>Selected work</p>
           <h2 style={{ marginTop: "8px", fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#e8eaf0", fontFamily: "var(--font-display)", margin: "8px 0 0" }}>Featured projects</h2>
         </div>
 
-        <div className="stagger-children" style={{ display: "grid", gap: "20px", gridTemplateColumns: "repeat(auto-fill,minmax(340px,1fr))" }}>
+        <div className="stagger-children projects-grid" style={{ display: "grid", gap: "20px", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))" }}>
           {projects.map((p, i) => {
             const isOpen = expanded === i;
             return (

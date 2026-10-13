@@ -34,7 +34,7 @@ export default function Navbar({ name }) {
 
   return (
     <nav style={{ position: "sticky", top: 0, zIndex: 40, borderBottom: "1px solid #222a3c", background: "rgba(11,13,19,0.88)", backdropFilter: "blur(16px)" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px" }}>
+      <div className="section-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px" }}>
 
         <button onClick={() => scrollTo("top")} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.1rem", color: "#e8eaf0", display: "flex", alignItems: "center", gap: "10px", padding: 0 }}>
           <img src="/Hasnain.jpg" alt="M. Hasnain" style={{ height: "32px", width: "32px", borderRadius: "50%", objectFit: "cover", objectPosition: "top", boxShadow: "0 0 0 2px rgba(143,176,255,0.4)" }} />
