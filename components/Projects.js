@@ -4,7 +4,6 @@ import { projects } from "../lib/data";
 
 export default function Projects() {
   const [expanded, setExpanded] = useState(null);
-  const [preview, setPreview] = useState(null);
 
   return (
     <section id="projects" style={{ background: "#0b0d13", padding: "64px 0" }}>
@@ -53,13 +52,13 @@ export default function Projects() {
                   </div>
 
                   {p.live && (
-                    <button
-                      onClick={e => { e.stopPropagation(); setPreview(p); }}
-                      style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", marginTop: "4px", padding: "11px 20px", borderRadius: "10px", background: "rgba(143,176,255,0.08)", border: "1px solid rgba(143,176,255,0.2)", color: "#8fb0ff", fontSize: "13px", fontWeight: 600, cursor: "pointer", transition: "background 0.2s,border-color 0.2s", width: "100%" }}
+                    <a href={p.live} target="_blank" rel="noopener noreferrer"
+                      onClick={e => e.stopPropagation()}
+                      style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", marginTop: "4px", padding: "11px 20px", borderRadius: "10px", background: "rgba(143,176,255,0.08)", border: "1px solid rgba(143,176,255,0.2)", color: "#8fb0ff", fontSize: "13px", fontWeight: 600, cursor: "pointer", transition: "background 0.2s,border-color 0.2s", width: "100%", textDecoration: "none", textAlign: "center" }}
                       onMouseEnter={e => { e.currentTarget.style.background = "rgba(143,176,255,0.15)"; e.currentTarget.style.borderColor = "rgba(143,176,255,0.5)"; }}
                       onMouseLeave={e => { e.currentTarget.style.background = "rgba(143,176,255,0.08)"; e.currentTarget.style.borderColor = "rgba(143,176,255,0.2)"; }}>
                       ↗ View Live Site
-                    </button>
+                    </a>
                   )}
                 </div>
               </article>
@@ -68,45 +67,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Live preview modal */}
-      {preview && (
-        <div
-          onClick={() => setPreview(null)}
-          style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(0,0,0,0.85)", backdropFilter: "blur(6px)", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px" }}>
-          <div
-            onClick={e => e.stopPropagation()}
-            style={{ width: "100%", maxWidth: "1100px", height: "85vh", borderRadius: "16px", border: "1px solid #222a3c", overflow: "hidden", display: "flex", flexDirection: "column", background: "#0b0d13" }}>
 
-            {/* Modal toolbar */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 20px", borderBottom: "1px solid #222a3c", background: "#121622", flexShrink: 0 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div style={{ display: "flex", gap: "6px" }}>
-                  <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f57", display: "block" }} />
-                  <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#febc2e", display: "block" }} />
-                  <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#28c840", display: "block" }} />
-                </div>
-                <span style={{ fontSize: "13px", color: "#8c95ab", fontFamily: "var(--font-mono)" }}>{preview.live}</span>
-              </div>
-              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <a href={preview.live} target="_blank" rel="noopener noreferrer"
-                  style={{ fontSize: "12px", color: "#8fb0ff", textDecoration: "none", border: "1px solid rgba(143,176,255,0.2)", padding: "5px 12px", borderRadius: "6px" }}>
-                  Open in new tab ↗
-                </a>
-                <button onClick={() => setPreview(null)}
-                  style={{ background: "none", border: "none", color: "#8c95ab", fontSize: "20px", cursor: "pointer", lineHeight: 1, padding: "0 4px" }}>
-                  ✕
-                </button>
-              </div>
-            </div>
-
-            <iframe
-              src={preview.live}
-              title={preview.name}
-              style={{ flex: 1, border: "none", width: "100%", background: "#fff" }}
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 }

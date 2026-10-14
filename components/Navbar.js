@@ -1,54 +1,40 @@
 "use client";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navItems = [
-  { id: "top", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "contact", label: "Contact" },
+  { id: "home",       label: "Home",       href: "/" },
+  { id: "projects",   label: "Projects",   href: "/projects" },
+  { id: "experience", label: "Experience", href: "/experience" },
+  { id: "skills",     label: "Skills",     href: "/skills" },
+  { id: "about",      label: "About",      href: "/about" },
+  { id: "contact",    label: "Contact",    href: "/contact" },
 ];
 
-export default function Navbar({ name }) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [active, setActive] = useState("top");
-
-  useEffect(() => {
-    const onScroll = () => {
-      const sections = navItems.map((n) => document.getElementById(n.id)).filter(Boolean);
-      let current = "top";
-      for (const sec of sections) {
-        if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
-      }
-      setActive(current);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: "smooth" });
-    setIsOpen(false);
-  };
+  const pathname = usePathname();
+  const active = navItems.find((item) =>
+    item.href === "/" ? pathname === "/" : pathname.startsWith(item.href)
+  )?.id;
 
   return (
     <nav style={{ position: "sticky", top: 0, zIndex: 40, borderBottom: "1px solid #222a3c", background: "rgba(11,13,19,0.88)", backdropFilter: "blur(16px)" }}>
       <div className="section-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px" }}>
 
-        <button onClick={() => scrollTo("top")} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.1rem", color: "#e8eaf0", display: "flex", alignItems: "center", gap: "10px", padding: 0 }}>
+        <Link href="/" style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.1rem", color: "#e8eaf0", display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
           <img src="/Hasnain.jpg" alt="M. Hasnain" style={{ height: "32px", width: "32px", borderRadius: "50%", objectFit: "cover", objectPosition: "top", boxShadow: "0 0 0 2px rgba(143,176,255,0.4)" }} />
           M. Hasnain
-        </button>
+        </Link>
 
         {/* Desktop pill nav */}
         <div style={{ display: "flex", alignItems: "center", gap: "4px", borderRadius: "9999px", border: "1px solid #222a3c", background: "#121622", padding: "4px" }} className="desk-nav">
           {navItems.map((item) => (
-            <button key={item.id} onClick={() => scrollTo(item.id)}
-              style={{ borderRadius: "9999px", padding: "7px 14px", fontSize: "12px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", border: "none", cursor: "pointer", transition: "all 0.2s", background: active === item.id ? "#8fb0ff" : "transparent", color: active === item.id ? "#0b0d13" : "#8c95ab" }}>
+            <Link key={item.id} href={item.href}
+              style={{ borderRadius: "9999px", padding: "7px 14px", fontSize: "12px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.2s", background: active === item.id ? "#8fb0ff" : "transparent", color: active === item.id ? "#0b0d13" : "#8c95ab" }}>
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -63,10 +49,10 @@ export default function Navbar({ name }) {
       {isOpen && (
         <div style={{ borderTop: "1px solid #222a3c", background: "#0b0d13", padding: "12px 24px 16px" }}>
           {navItems.map((item) => (
-            <button key={item.id} onClick={() => scrollTo(item.id)}
-              style={{ display: "block", width: "100%", textAlign: "left", borderRadius: "10px", padding: "10px 14px", fontSize: "14px", fontWeight: 600, border: "none", cursor: "pointer", background: active === item.id ? "#8fb0ff" : "transparent", color: active === item.id ? "#0b0d13" : "#8c95ab", marginBottom: "4px" }}>
+            <Link key={item.id} href={item.href} onClick={() => setIsOpen(false)}
+              style={{ display: "block", borderRadius: "10px", padding: "10px 14px", fontSize: "14px", fontWeight: 600, textDecoration: "none", background: active === item.id ? "#8fb0ff" : "transparent", color: active === item.id ? "#0b0d13" : "#8c95ab", marginBottom: "4px" }}>
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
       )}
