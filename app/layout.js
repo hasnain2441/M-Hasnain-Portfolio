@@ -1,4 +1,5 @@
 import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display" });
@@ -14,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
+      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}<Analytics /></body>
     </html>
   );
 }
