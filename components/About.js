@@ -21,7 +21,7 @@ export default function About() {
   const doubled = [...TECHS, ...TECHS];
 
   return (
-    <section style={{ borderTop: "1px solid #222a3c", background: "#0f1219", overflow: "hidden", paddingBottom: "64px" }}>
+    <section id="about" style={{ borderTop: "1px solid #222a3c", background: "#0f1219", overflow: "hidden", paddingBottom: "64px" }}>
 
       {/* Scrolling tech bar */}
       <div style={{ borderBottom: "1px solid #222a3c", padding: "18px 0", overflow: "hidden", position: "relative" }}>
